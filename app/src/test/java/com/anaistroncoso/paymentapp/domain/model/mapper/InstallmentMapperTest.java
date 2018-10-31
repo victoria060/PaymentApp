@@ -25,6 +25,6 @@ public class InstallmentMapperTest {
 
 
         InstallmentModel installmentModel=installmentMapper.reverseMap(installmentEntity);
-        Assert.assertEquals("some message", installmentModel.payerCost.get(0));
+        Assert.assertEquals("some message", installmentModel.payerCost.get(0).recommendedMessage);
     }
 }

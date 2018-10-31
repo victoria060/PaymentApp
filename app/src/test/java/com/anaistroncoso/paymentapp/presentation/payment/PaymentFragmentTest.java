@@ -9,6 +9,7 @@ import com.anaistroncoso.paymentapp.R;
 import com.anaistroncoso.paymentapp.RobolectricBaseTest;
 import com.anaistroncoso.paymentapp.common.view.activity.AppNavigation;
 import com.anaistroncoso.paymentapp.common.view.adapter.OnClickRecyclerViewItem;
+import com.anaistroncoso.paymentapp.common.view.fragment.BaseFragment;
 import com.anaistroncoso.paymentapp.presentation.viewmodel.PaymentViewModel;
 
 import org.junit.Assert;
@@ -37,6 +38,8 @@ public class PaymentFragmentTest extends RobolectricBaseTest {
     PaymentPresenter paymentPresenter;
     @Mock
     PaymentAdapter paymentAdapter;
+    @Mock
+    AppNavigation appNavigation;
     @InjectMocks
     PaymentFragment paymentFragment;
 
@@ -83,9 +86,20 @@ public class PaymentFragmentTest extends RobolectricBaseTest {
         paymentFragment.hideLoading();
         verify(progressBar).setVisibility(View.GONE);
     }
-    @Test public void onClickItem(){
 
+    @Test
+    public void onClickItem() {
+        View view = mock(View.class);
+        PaymentViewModel paymentModel = mock(PaymentViewModel.class);
+        paymentFragment.onClickItem(view, paymentModel);
+        verify(clDetailContinue).setVisibility(View.VISIBLE);
+        verify(tvPaymentName).setText(null);
     }
 
+    public void goNextStep() {
+        paymentFragment.goNextStep();
+        verify(appNavigation).replaceFragment(any(BaseFragment.class));
+
+    }
 
 }
