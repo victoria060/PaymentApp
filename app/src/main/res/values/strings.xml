@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">PaymentApp</string>
+    <string name="enter_amount">Ingrese el monto</string>
+    <string name="continue_button">Continuar</string>
+    <string name="conection_error">Lo sentimos ha ocurrido un error en la conexión</string>
+    <string name="empty_array">Lo sentimos, por favor cambie las opciones seleccionadas y vuelva a intentar </string>
+    <string name="accept">Aceptar</string>
+    <string name="empty_value_warning">Debe ingresar un valor</string>
+
+
+    <string name="toolbar_enter_amount">Ingresar el monto</string>
+    <string name="toolbar_select_payment">Seleccionar medio de pago</string>
+    <string name="toolbar_select_bank">Seleccionar banco</string>
+    <string name="toolbar_select_installments">Seleccionar cuotas </string>
+    <string name="are_you_sure">Desea pagar con:</string>
+
+    <string name="confirmation_dialog_text">Hemos registrado un pago con el siguiente detalle:\n\n
+        Monto : %1$s\n
+        Metodo de pago : %2$s \n
+        Banco : %3$s \n
+        Cuotas : %4$s \n</string>
+</resources>
