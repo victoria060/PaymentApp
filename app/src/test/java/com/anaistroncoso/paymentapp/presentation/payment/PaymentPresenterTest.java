@@ -19,8 +19,11 @@ public class PaymentPresenterTest extends BaseTest {
     GetPaymentUseCase getPaymentUseCase;
     @Mock
     PaymentObserver paymentObserver;
+    @Mock
+    PaymentContract.View view;
     @InjectMocks
     PaymentPresenter paymentPresenter;
+
 
     @Test
     public void getPaymentMethod() {

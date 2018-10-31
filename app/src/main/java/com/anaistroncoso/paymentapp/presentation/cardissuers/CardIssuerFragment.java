@@ -44,14 +44,14 @@ public class CardIssuerFragment extends BaseFragment implements CardIssuerContra
     @BindView(R.id.progress_bar)
     ProgressBar progressBar;
 
-    private AppNavigation appNavigation;
-    private SucessfullPayment sucessfullPayment;
+    AppNavigation appNavigation;
+    SucessfullPayment sucessfullPayment;
 
-    private String ammount;
-    private String paymentId;
-    private String paymentName;
-    private String cardIssuerId;
-    private String cardIssuerName;
+    String ammount;
+    String paymentId;
+    String paymentName;
+    String cardIssuerId;
+    String cardIssuerName;
 
 
     public static CardIssuerFragment getInstance(String ammount, String paymentId, String paymentName) {
@@ -78,7 +78,7 @@ public class CardIssuerFragment extends BaseFragment implements CardIssuerContra
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.fragment_recycler;
     }
 

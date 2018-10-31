@@ -23,21 +23,19 @@ import static com.anaistroncoso.paymentapp.common.AmmountFormatting.getNumbersFr
 
 public class AmmountFragment extends BaseFragment implements AmmountContract.View {
 
-    private AppNavigation appNavigation;
-    private SucessfullPayment sucessfullPayment;
-
 
     @Inject
     AmmountTextWatcher ammountTextWatcher;
-
     @Inject
     AmmountPresenter ammountPresenter;
 
     @BindView(R.id.textinputlayout_input_amount)
     TextInputLayout inputLayoutAmmount;
-
     @BindView(R.id.edittext_input_name)
     EditText edittextAmmount;
+
+    AppNavigation appNavigation;
+    SucessfullPayment sucessfullPayment;
 
 
     @Override
@@ -51,8 +49,10 @@ public class AmmountFragment extends BaseFragment implements AmmountContract.Vie
         ammountTextWatcher.setEdittextAmmount(edittextAmmount);
         edittextAmmount.addTextChangedListener(ammountTextWatcher);
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.toolbar_enter_amount));
+        if (((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.toolbar_enter_amount));
+        }
     }
 
     @Override

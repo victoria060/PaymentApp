@@ -26,7 +26,7 @@ public class PaymentEntity {
     public String thumbnail;
 
     @SerializedName(PaymentConstant.DEFERRED_CAPTURE)
-    public String deferredCapture; //TODO: -> am i going to use it?
+    public String deferredCapture;
 
     @SerializedName(PaymentConstant.SETTINGS)
     public List<SettingEntity> paymentSetting;

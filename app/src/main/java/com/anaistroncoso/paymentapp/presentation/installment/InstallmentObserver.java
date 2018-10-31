@@ -32,10 +32,10 @@ public class InstallmentObserver extends UseCaseObserver<InstallmentContract.Vie
     @Override
     public void onNext(List<InstallmentModel> installmentModels) {
         List<InstallmentViewModel> installmentViewModel = installmentMapper.reverseMap(installmentModels);
-        if (installmentModels != null && !installmentModels.isEmpty()) {
-            getView().showInstallments(installmentViewModel.get(0).payerCost);
-        } else {
+        if (installmentViewModel == null || installmentViewModel.isEmpty()) {
             getView().showEmptyInstallments();
+        } else {
+            getView().showInstallments(installmentViewModel.get(0).payerCost);
         }
 
     }

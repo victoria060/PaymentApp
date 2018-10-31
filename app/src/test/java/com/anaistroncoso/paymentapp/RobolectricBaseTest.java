@@ -7,7 +7,9 @@ import org.mockito.junit.MockitoRule;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
-@RunWith(RobolectricTestRunner.class) @Config(constants = BuildConfig.class, manifest=Config.NONE)
+@RunWith(RobolectricTestRunner.class)
+@Config(manifest = Config.NONE)
 public abstract class RobolectricBaseTest {
-  @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
+    @Rule
+    public final MockitoRule mockitoRule = MockitoJUnit.rule();
 }

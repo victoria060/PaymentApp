@@ -45,15 +45,15 @@ public class InstallmentFragment extends BaseFragment implements InstallmentCont
     @BindView(R.id.progress_bar)
     ProgressBar progressBar;
 
-    private AppNavigation appNavigation;
-    private SucessfullPayment sucessfullPayment;
+    AppNavigation appNavigation;
+    SucessfullPayment sucessfullPayment;
 
-    private String ammount;
-    private String paymentId;
-    private String paymentName;
-    private String cardIssuerID;
-    private String installments;
-    private String cardIssuerName;
+    String ammount;
+    String paymentId;
+    String paymentName;
+    String cardIssuerID;
+    String installments;
+    String cardIssuerName;
 
     public static InstallmentFragment getInstance(String ammount, String paymentId, String paymentName, String cardIssuerID, String cardIssuerName) {
         Bundle bundle = new Bundle();
